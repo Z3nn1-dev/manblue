@@ -63,6 +63,66 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.marquee/jquery.marquee.min.css">
 
     <style>
+        .career-info-section {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 4rem 0;
+            margin: 2rem 0;
+        }
+        .career-info-section .headline {
+            color: #ffd700;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .career-info-section .intro-text {
+            color: white;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        .career-info-section .section-title {
+            color: #ffd700;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin: 2rem 0 1rem;
+        }
+        .career-info-section ul {
+            color: white;
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .career-info-section ul li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .career-info-section ul li:before {
+            content: '•';
+            color: #ffd700;
+            position: absolute;
+            left: 0;
+        }
+        .career-info-section .download-btn {
+            background: #ffd700;
+            color: black;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            display: inline-block;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        }
+        .career-info-section .download-btn:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+        .career-info-section .warning-text {
+            color: #ffd700;
+            font-style: italic;
+            margin-top: 2rem;
+        }
         .department-section {
             padding: 2rem 0;
         }
@@ -150,6 +210,44 @@
             <img src="career/alsayegh/assets/img/arrow-down.svg" width="20px" style="margin-top:5px">
         </a>
     </header>
+
+    <!-- Career Information Section -->
+    <section class="career-info-section">
+        <div class="container">
+            <h2 class="headline">🚀 Join Al Sayegh – Your Gateway to a Global Career</h2>
+            
+            <div class="intro-text">
+                <p>At Al Sayegh, we work with world-leading brands and international partners.
+                We invite you to take part in high-impact projects, gain global experience, and grow your career with us.</p>
+
+                <p>To ensure clarity and simplicity, we provide the official Career Information & Application Form package.
+                This is the only mandatory document required to complete your application.</p>
+            </div>
+
+            <h3 class="section-title">What's Inside the Package</h3>
+            <ul>
+                <li><strong>Job Descriptions & Benefits</strong> – Detailed roles, responsibilities, and growth opportunities.</li>
+                <li><strong>Partners & Projects</strong> (with Images & Videos) – An overview of our collaborations and real campaign showcases.</li>
+                <li><strong>Official Registration Form</strong> – The required form to complete with your personal details, experience, and skills.</li>
+            </ul>
+
+            <h3 class="section-title">How to Apply</h3>
+            <ul>
+                <li>Download the Career Information & Application Form (.zip) using the button below</li>
+                <li>Review the Job Descriptions, Benefits, and Partner information inside</li>
+                <li>Complete and Upload the Registration Form through the website application form</li>
+            </ul>
+
+            <div class="text-center">
+                <a href="career/alsayegh/assets/downloads/AlSayegh_Career-Information-&-Application-Form.zip" class="download-btn">
+                    ⬇️ DOWNLOAD CAREER INFORMATION & APPLICATION FORM
+                </a>
+                <p class="mt-2 small text-muted">Official package including JD, Benefits, Partners, and Registration Form</p>
+            </div>
+
+            <p class="warning-text text-center">⚠️ Only candidates who submit the completed Registration Form will be considered in the recruitment process.</p>
+        </div>
+    </section>
 
     <!-- Services Section -->
     <section id="services" class="services">
