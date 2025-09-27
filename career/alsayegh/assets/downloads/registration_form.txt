@@ -1,0 +1,29 @@
+Al Sayegh Registration Form
+
+Personal Information:
+Full Name: ____________________
+Email: _______________________
+Phone: _______________________
+LinkedIn URL: _________________
+Current Location: _____________
+
+Professional Experience:
+Current Position: _____________
+Years of Experience: __________
+Key Skills: __________________
+
+Position of Interest:
+Role: _______________________
+Preferred Location: __________
+Available Start Date: ________
+
+Additional Information:
+Languages Spoken: ___________
+Visa Status: _______________
+Notice Period: _____________
+
+Declaration:
+I confirm that all information provided is accurate and complete.
+
+Signature: ________________
+Date: ___________________

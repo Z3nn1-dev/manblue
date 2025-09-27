@@ -63,6 +63,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.marquee/jquery.marquee.min.css">
 
     <style>
+        @keyframes highlight-pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(255, 215, 0, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+        }
+        
         .career-info-section {
             background: rgba(255, 255, 255, 0.05);
             padding: 4rem 0;
@@ -239,7 +245,7 @@
             </ul>
 
             <div class="text-center">
-                <a href="career/alsayegh/assets/downloads/AlSayegh_Career-Information-&-Application-Form.zip" class="download-btn">
+                <a href="career/alsayegh/assets/downloads/AlSayegh_Career-Information-&-Application-Form.zip" class="download-btn" id="careerPackageDownload">
                     ⬇️ DOWNLOAD CAREER INFORMATION & APPLICATION FORM
                 </a>
                 <p class="mt-2 small text-muted">Official package including JD, Benefits, Partners, and Registration Form</p>
@@ -627,12 +633,33 @@
 
         $(document).ready(function () {
             function showError(inputId, message) {
-                $('#' + inputId + 'Error').text(message);
+                const errorElement = $('#' + inputId + 'Error');
+                errorElement.text(message);
+                if (message.includes('Career Information & Application Form')) {
+                    errorElement.css({
+                        'color': '#ffd700',
+                        'font-weight': 'bold',
+                        'font-size': '1.1em',
+                        'margin-top': '10px',
+                        'margin-bottom': '10px'
+                    });
+                }
             }
 
             function clearErrors() {
-                $('.error-message').text('');
+                $('.error-message').text('').css({
+                    'color': '',
+                    'font-weight': '',
+                    'font-size': '',
+                    'margin-top': '',
+                    'margin-bottom': ''
+                });
             }
+
+            // Track career package download
+            $('#careerPackageDownload').on('click', function() {
+                localStorage.setItem('careerPackageDownloaded', 'true');
+            });
 
             $('#contactForm').on('submit', function (e) {
                 e.preventDefault();
@@ -644,6 +671,20 @@
                 let formLinkedin = $('input[name="linkedin"]').val().trim();
                 let formMessage = $('textarea[name="message"]').val().trim();
                 let hasError = false;
+
+                // Check if user has downloaded the career package
+                if (!localStorage.getItem('careerPackageDownloaded')) {
+                    showError('message', '⚠️ Please download the Career Information & Application Form package before submitting your application.');
+                    hasError = true;
+                    
+                    // Scroll to the download button after a short delay
+                    setTimeout(() => {
+                        const downloadBtn = document.getElementById('careerPackageDownload');
+                        downloadBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        // Add a highlight effect
+                        downloadBtn.style.animation = 'highlight-pulse 2s';
+                    }, 5000);
+                }
 
                 if (!formName) {
                     showError('name', 'Name is required.');
